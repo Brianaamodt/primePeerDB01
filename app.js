@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/assignments');
+var assignments = require('./routes/assignments');
 
 var app = express();
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -24,12 +24,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/assignments', assignments);
 
 var mongoose = require('mongoose');
 
 var mongoURI = "mongodb://localhost:27017/todoAPI";
 var MongoDB = mongoose.connect(mongoURI).connection;
+
 MongoDB.on('error', function (err) {
     if (err) {
         console.log('mongodb connection error', err);
