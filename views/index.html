@@ -3,12 +3,23 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
-this is the homepage
-<ul class ="entries"></ul>
-
-<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
-<script type="text/javascript" src="/javascripts/app.js"></script>
+    <ul class ="entries"></ul>
+    <form class="hidden revise">
+        <label for="name">Name:</label>
+        <input class="name" name="name" id="name" type="text">
+        <br />
+        <label for="score">score:</label>
+        <input class="score" name="score" id="score" type="text">
+        <br/>
+        <label for="date_completed">date completed:</label>
+        <input class="date" name="date_completed" id="date_completed" type="text">
+        <br />
+        <input class="submit" type="submit" value="Submit">
+    </form>
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
 </body>
 </html>
